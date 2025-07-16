@@ -144,7 +144,7 @@ function CapturePage() {
   newPhotos[previewStep] = imageDataUrl;
   setPhotos(newPhotos);
   setPreviewStep(previewStep + 1);
-}, [photos, previewStep, selectedFilter]);
+}, [photos, previewStep, selectedFilter, filterStyles]);
 
 
   useEffect(() => {
