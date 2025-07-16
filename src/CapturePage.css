@@ -91,7 +91,7 @@ html, body, #root {
 .slot {
   width: 75%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 0.56vw;
 }
 
