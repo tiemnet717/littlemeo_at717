@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
 
 .frame-page {
-  width: 100vw;
-  height: calc(100vw * 9 / 16);
-  max-height: 100vh;
   position: relative;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -18,15 +17,17 @@
   z-index: -1;
 }
 
-/* title chữ PNG */
+/* Title */
 .title-img {
   position: absolute;
-  width: 240px;
-  top: 40px;
+  top: 4vh;
+  width: 15vw;
+  max-width: 240px;
+  height: auto;
 }
 
 .top-left {
-  left: 40px;
+  left: 3vw;
 }
 
 .top-center {
@@ -35,14 +36,16 @@
 }
 
 .top-right {
-  right: 40px;
+  right: 3vw;
 }
 
+/* Icon chọn frame */
 .frame-icons {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 140px;
+  flex-wrap: wrap;
+  gap: 2vw;
+  margin-top: 18vh;
 }
 
 .icon-wrapper {
@@ -50,7 +53,8 @@
 }
 
 .icon {
-  width: 100px;
+  width: 6vw;
+  min-width: 60px;
   height: auto;
   cursor: pointer;
   transition: transform 0.3s;
@@ -69,119 +73,115 @@
   margin-top: 4px;
 }
 
+/* Preview frame bên phải */
 .preview-box {
   position: absolute;
-  top: 51%;
-  left: 359px;
+  top: 50%;
+  left: 25vw;
   transform: translateY(-50%);
   z-index: 10;
 }
 
 .preview-img {
-  width: 250px;
+  width: 17vw;
+  max-width: 250px;
   height: auto;
   object-fit: contain;
 }
 
+/* Nút next */
 .next-btn {
   position: absolute;
-  bottom: 50px;
-  right: 60px;
-  width: 250px;
+  bottom: 6vh;
+  right: 6vw;
+  width: 15vw;
+  max-width: 250px;
   cursor: pointer;
 }
 
-.text-rockstar {
+/* Các thành phần text / icon khác */
+.text-rockstar,
+.text-wwclub,
+.text-previous,
+.icon-cat-rockstar,
+.icon-cat-1,
+.icon-cat-2,
+.icon-cat-3,
+.icon-cat-4,
+.icon-evmmww,
+.icon-tamagyuchi {
   position: absolute;
-  top: 220px;
-  left: 752px;
   width: auto;
   height: auto;
+}
+
+/* Tuỳ chỉnh lại vị trí để relative theo viewport */
+.text-rockstar {
+  top: 22vh;
+  left: 52vw;
 }
 
 .text-wwclub {
-  position: absolute;
-  top: 220px;
-  left: 1050px;
-  width: auto;
-  height: auto;
+  top: 22vh;
+  left: 68vw;
 }
 
 .text-previous {
-  position: absolute;
-  top: 500px;
-  left: 752px;
-  width: auto;
-  height: auto;
+  top: 50vh;
+  left: 52vw;
 }
 
 .icon-cat-rockstar {
-  position: absolute;
-  top: 286px;
-  left: 752px;
-  width:auto;
-  height: auto;
+  top: 29vh;
+  left: 52vw;
 }
 
 .icon-cat-1 {
-  position: absolute;
-  top: 305px;
-  left: 1050px;
-  width: auto;
-  height: auto;
+  top: 30vh;
+  left: 68vw;
 }
 
 .icon-cat-2 {
-  position: absolute;
-  top: 305px;
-  left: 1190px;
-  width: auto;
-  height: auto;
+  top: 30vh;
+  left: 77vw;
 }
 
 .icon-cat-3 {
-  position: absolute;
-  top: 310px;
-  left: 1330px;
-  width: 95px;
-  height: auto;
+  top: 31vh;
+  left: 86vw;
+  width: 6vw;
 }
 
 .icon-cat-4 {
-  position: absolute;
-  top: 295px;
-  left: 1480px;
-  width: 100px;
-  height: auto;
+  top: 30vh;
+  left: 95vw;
+  width: 6.5vw;
 }
 
 .icon-evmmww {
-  position: absolute;
-  top: 565px;
-  left: 752px;
-  width: auto;
-  height: auto;
+  top: 57vh;
+  left: 52vw;
 }
 
 .icon-tamagyuchi {
-  position: absolute;
-  top: 545px;
-  left: 1080px;
-  width: 175px;
-  height: auto;
+  top: 55vh;
+  left: 69vw;
+  width: 12vw;
 }
 
+/* Footer credit */
 .footer-credit {
   position: absolute;
-  bottom: 10px;
+  bottom: 1.5vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
-  font-size: 12px;
+  font-size: 1.2vw;
+  min-font-size: 12px;
   text-align: center;
-  color: #4a3f44;
-  font-family: 'Courier New', Courier, monospace, underline;
-  line-height: 1.5;
+  color: #333;
+  font-family: 'Neulis', Medium;
+  width: 90%;
+  line-height: 1.4;
 }
 
 .footer-credit a {
@@ -192,6 +192,12 @@
 .footer-credit a:hover {
   text-decoration: underline;
 }
+
+.underline {
+  text-decoration: underline;
+  color: inherit;
+}
+
 
 .footer-credit {
   font-family: 'Neulis', Medium;
@@ -214,40 +220,11 @@
   color: #000000;
 }
 
+/* Back arrow */
 .back-arrow {
   position: absolute;
-  top: 30px;
-  left: 30px;
-  width: 30px;
-  height: auto;
-  cursor: pointer;
-  transition: filter 0.3s;
-}
-
-.back-arrow:hover {
-  filter: brightness(0); /* chuyển icon thành màu đen */
-}
-
-.footer-credit {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 14px;
-  text-align: center;
-  color: #333;
-  font-family: 'Neulis', Medium;
-}
-
-.underline {
-  text-decoration: underline;
-  color: #333;
-}
-
-.back-arrow {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 2vh;
+  left: 2vw;
   width: 30px;
   height: auto;
   cursor: pointer;
