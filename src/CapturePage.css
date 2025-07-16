@@ -173,17 +173,17 @@ html, body, #root {
 .delay-select {
   position: absolute;
   top: 12.4vh;
-  left: 36.8%;
+  left: 37%;
   transform: translateX(-50%);
   display: flex;
-  gap: 1.39vw;
+  gap: 1vw;
   z-index: 10;
 }
 
 .delay-select button {
   background: #fff;
   border: 2px solid #59A4F2;
-  padding: 1.2vh 2vw;
+  padding: 0.5vh 0.5vw;
   font-size: 1.2vw;
   font-weight: 600;
   cursor: pointer;
@@ -237,10 +237,10 @@ html, body, #root {
 
 .filter-title-img {
   position: absolute;
-  top: 17vh;
-  left: 50%;
+  top: 15.5vh;
+  left: 95.5%;
   transform: translateX(-50%);
-  height: 1.8vh;
+  height: 2vh;
   width: auto;
   z-index: 10;
 }
@@ -254,14 +254,14 @@ html, body, #root {
 
 .filter-option {
   position: absolute;
-  width: 2.78vw;
+  width: 2.6vw;
   cursor: pointer;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.filter-normal { top: 65%; left: 85%; }
-.filter-cold { top: 95%; left: 85%; }
-.filter-warm { top: 130%; left: 85%; }
+.filter-normal { top: 67%; left: 85%; }
+.filter-cold { top: 100%; left: 85%; }
+.filter-warm { top: 133%; left: 85%; }
 
 .filter-option.active.filter-normal {
   filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.6));
