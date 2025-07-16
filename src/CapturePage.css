@@ -84,7 +84,7 @@ html, body, #root {
   position: absolute;
   width: 95%;
   left: 4%;
-  height: 17.2vh;
+  height: 100%; /* Đổi từ 17.2vh sang 100% nếu chứa 4 slot */
   z-index: 2;
 }
 
@@ -95,10 +95,10 @@ html, body, #root {
   border-radius: 0.56vw;
 }
 
-.slot-1 { top: 8vh; }
-.slot-2 { top: 26vh; }
-.slot-3 { top: 45vh; }
-.slot-4 { top: 63vh; }
+.slot-1 { top: 10%; }
+.slot-2 { top: 33%; }
+.slot-3 { top: 55%; }
+.slot-4 { top: 80%; }
 
 .delete-icon {
   position: absolute;

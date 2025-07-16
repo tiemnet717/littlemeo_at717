@@ -98,17 +98,54 @@ function CapturePage() {
   }, [isAuto, previewStep, delay]);
 
   const capturePhoto = useCallback(() => {
-    if (!webcamRef.current || previewStep >= 4) return;
-    shutterAudio.current.currentTime = 0;
-    shutterAudio.current.play();
-    const screenshot = webcamRef.current.getScreenshot();
-    if (screenshot) {
-      const newPhotos = [...photos];
-      newPhotos[previewStep] = screenshot;
-      setPhotos(newPhotos);
-      setPreviewStep(previewStep + 1);
-    }
-  }, [photos, previewStep]);
+  if (!webcamRef.current || previewStep >= 4) return;
+
+  shutterAudio.current.currentTime = 0;
+  shutterAudio.current.play();
+
+  const video = webcamRef.current.video;
+  const canvas = document.createElement("canvas");
+
+  // Set canvas size to match .preview-large (4:3 aspect ratio)
+  const previewWidth = 800;  // hoặc 640 nếu m muốn nhỏ hơn
+  const previewHeight = 600; // tỉ lệ 4:3
+
+  canvas.width = previewWidth;
+  canvas.height = previewHeight;
+
+  const ctx = canvas.getContext("2d");
+
+  const videoAspectRatio = video.videoWidth / video.videoHeight;
+  const targetAspectRatio = previewWidth / previewHeight;
+
+  let sx, sy, sw, sh;
+
+  // Crop video to match preview aspect ratio
+  if (videoAspectRatio > targetAspectRatio) {
+    // video quá rộng → crop 2 bên
+    sh = video.videoHeight;
+    sw = sh * targetAspectRatio;
+    sx = (video.videoWidth - sw) / 2;
+    sy = 0;
+  } else {
+    // video quá cao → crop trên/dưới
+    sw = video.videoWidth;
+    sh = sw / targetAspectRatio;
+    sx = 0;
+    sy = (video.videoHeight - sh) / 2;
+  }
+
+  ctx.filter = filterStyles[selectedFilter] || 'none';
+  ctx.drawImage(video, sx, sy, sw, sh, 0, 0, previewWidth, previewHeight);
+
+  const imageDataUrl = canvas.toDataURL('image/png');
+
+  const newPhotos = [...photos];
+  newPhotos[previewStep] = imageDataUrl;
+  setPhotos(newPhotos);
+  setPreviewStep(previewStep + 1);
+}, [photos, previewStep, selectedFilter]);
+
 
   useEffect(() => {
     if (countdown === null || countdown <= 0) return;
