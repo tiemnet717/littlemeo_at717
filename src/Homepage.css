@@ -16,10 +16,10 @@
 /* Nút "Get Start" căn giữa dưới đáy màn hình, tự co theo chiều ngang */
 .get-start-btn {
   position: absolute;
-  bottom: 5vh;
+  bottom: 7vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 15vw;
+  width: 14vw;
   min-width: 150px;
   max-width: 220px;
   height: auto;

@@ -83,7 +83,7 @@
 }
 
 .preview-img {
-  width: 17vw;
+  width: 12.5vw;
   max-width: 250px;
   height: auto;
   object-fit: contain;
@@ -118,55 +118,71 @@
 /* Tuỳ chỉnh lại vị trí để relative theo viewport */
 .text-rockstar {
   top: 22vh;
-  left: 52vw;
+  left: 45vw;
+  width: 8.5vw;
+  height: auto /* ← đây là dòng cần thêm */
 }
+
 
 .text-wwclub {
   top: 22vh;
-  left: 68vw;
+  left: 60vw;
+  width: 8.5vw;
+  height: auto /* ← đây là dòng cần thêm */
 }
 
 .text-previous {
-  top: 50vh;
-  left: 52vw;
+  top: 55vh;
+  left: 45vw;
+  width: 5.8vw;
+  height: auto /* ← đây là dòng cần thêm */
 }
 
 .icon-cat-rockstar {
-  top: 29vh;
-  left: 52vw;
+  top: 31vh;
+  left: 45vw;
+width: 9.5vw;
+  height: auto /* ← đây là dòng cần thêm */
 }
 
 .icon-cat-1 {
-  top: 30vh;
-  left: 68vw;
+  top: 35vh;
+  left: 60vw;
+  width: 5vw;
+  height: auto /* ← đây là dòng cần thêm */
 }
 
 .icon-cat-2 {
-  top: 30vh;
-  left: 77vw;
+  top: 35vh;
+  left: 67vw;
+  width: 5vw;
+  height: auto /* ← đây là dòng cần thêm */
 }
 
 .icon-cat-3 {
-  top: 31vh;
-  left: 86vw;
-  width: 6vw;
+  top: 35.5vh;
+  left: 74vw;
+  width: 5.2vw;
+  height: auto /* ← đây là dòng cần thêm */
 }
 
 .icon-cat-4 {
-  top: 30vh;
-  left: 95vw;
-  width: 6.5vw;
+  top: 34vh;
+  left: 81vw;
+  width: 5.25vw;
+  height: auto /* ← đây là dòng cần thêm */
 }
-
 .icon-evmmww {
-  top: 57vh;
-  left: 52vw;
+  top: 63vh;
+  left: 45vw;
+  width: 13vw;
+  height: auto /* ← đây là dòng cần thêm */
 }
 
 .icon-tamagyuchi {
-  top: 55vh;
-  left: 69vw;
-  width: 12vw;
+  top: 58vh;
+  left: 61vw;
+  width: 10.5vw;
 }
 
 /* Footer credit */
@@ -176,7 +192,6 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.2vw;
-  min-font-size: 12px;
   text-align: center;
   color: #333;
   font-family: 'Neulis', Medium;
@@ -200,15 +215,15 @@
 
 
 .footer-credit {
-  font-family: 'Neulis', Medium;
-  font-size: 15px;
-  color: #51a2f2;
   position: absolute;
-  bottom: 15px;
+  bottom: 1.5vh;
   left: 50%;
   transform: translateX(-50%);
+  font-size: 0.8vw;
   text-align: center;
-  line-height: 1.4;
+  color: #2090ff;
+  font-family: 'Neulis', Medium;
+  width: 90%;
 }
 
 .underline {
@@ -223,10 +238,9 @@
 /* Back arrow */
 .back-arrow {
   position: absolute;
-  top: 2vh;
+  top: 4vh;
   left: 2vw;
-  width: 30px;
-  height: auto;
+  width: 25px;
   cursor: pointer;
   transition: filter 0.2s;
 }
