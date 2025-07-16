@@ -67,7 +67,6 @@ html, body, #root {
   transform: translateY(-50%);
   height: 80%;
   width: 15.5vw;
-  max-width: 16.67vw;
   z-index: 3;
 }
 
@@ -184,12 +183,14 @@ html, body, #root {
 .delay-select button {
   background: #fff;
   border: 2px solid #59A4F2;
-  padding: 0.67vh 1.39vw;
-  font-size: 1rem;
-  font-weight: bold;
+  padding: 1.2vh 2vw;
+  font-size: 1.2vw;
+  font-weight: 600;
   cursor: pointer;
-  border-radius: 0.56vw;
+  border-radius: 1vw;
   transition: background 0.2s;
+  min-width: 5vw;
+  text-align: center;
 }
 
 .delay-select button.active,
@@ -237,7 +238,7 @@ html, body, #root {
 .filter-title-img {
   position: absolute;
   top: 17vh;
-  left: 95%;
+  left: 50%;
   transform: translateX(-50%);
   height: 1.8vh;
   width: auto;

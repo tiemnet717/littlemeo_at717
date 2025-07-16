@@ -22,7 +22,6 @@
   position: absolute;
   top: 4vh;
   width: 15vw;
-  max-width: 240px;
   height: auto;
 }
 
@@ -54,7 +53,6 @@
 
 .icon {
   width: 6vw;
-  min-width: 60px;
   height: auto;
   cursor: pointer;
   transition: transform 0.3s;
@@ -69,11 +67,11 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  width: 24px;
-  margin-top: 4px;
+  width: 1.5vw;
+  margin-top: 0.5vh;
 }
 
-/* Preview frame bên phải */
+/* Preview frame bên trái */
 .preview-box {
   position: absolute;
   top: 50%;
@@ -84,7 +82,6 @@
 
 .preview-img {
   width: 12.5vw;
-  max-width: 250px;
   height: auto;
   object-fit: contain;
 }
@@ -95,7 +92,6 @@
   bottom: 6vh;
   right: 6vw;
   width: 15vw;
-  max-width: 250px;
   cursor: pointer;
 }
 
@@ -115,74 +111,74 @@
   height: auto;
 }
 
-/* Tuỳ chỉnh lại vị trí để relative theo viewport */
 .text-rockstar {
   top: 22vh;
   left: 45vw;
   width: 8.5vw;
-  height: auto /* ← đây là dòng cần thêm */
+  height: auto;
 }
-
 
 .text-wwclub {
   top: 22vh;
   left: 60vw;
   width: 8.5vw;
-  height: auto /* ← đây là dòng cần thêm */
+  height: auto;
 }
 
 .text-previous {
   top: 55vh;
   left: 45vw;
   width: 5.8vw;
-  height: auto /* ← đây là dòng cần thêm */
+  height: auto;
 }
 
 .icon-cat-rockstar {
   top: 31vh;
   left: 45vw;
-width: 9.5vw;
-  height: auto /* ← đây là dòng cần thêm */
+  width: 9.5vw;
+  height: auto;
 }
 
 .icon-cat-1 {
   top: 35vh;
   left: 60vw;
   width: 5vw;
-  height: auto /* ← đây là dòng cần thêm */
+  height: auto;
 }
 
 .icon-cat-2 {
   top: 35vh;
   left: 67vw;
   width: 5vw;
-  height: auto /* ← đây là dòng cần thêm */
+  height: auto;
 }
 
 .icon-cat-3 {
   top: 35.5vh;
   left: 74vw;
   width: 5.2vw;
-  height: auto /* ← đây là dòng cần thêm */
+  height: auto;
 }
 
 .icon-cat-4 {
   top: 34vh;
   left: 81vw;
   width: 5.25vw;
-  height: auto /* ← đây là dòng cần thêm */
+  height: auto;
 }
+
 .icon-evmmww {
   top: 63vh;
   left: 45vw;
   width: 13vw;
-  height: auto /* ← đây là dòng cần thêm */
+  height: auto;
 }
 
 .icon-tamagyuchi {
   top: 58vh;
   left: 61vw;
   width: 10.5vw;
+  height: auto;
 }
 
 /* Footer credit */
@@ -191,12 +187,11 @@ width: 9.5vw;
   bottom: 1.5vh;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1.2vw;
+  font-size: 0.8vw;
   text-align: center;
-  color: #333;
+  color: #2090ff;
   font-family: 'Neulis', Medium;
   width: 90%;
-  line-height: 1.4;
 }
 
 .footer-credit a {
@@ -213,24 +208,6 @@ width: 9.5vw;
   color: inherit;
 }
 
-
-.footer-credit {
-  position: absolute;
-  bottom: 1.5vh;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.8vw;
-  text-align: center;
-  color: #2090ff;
-  font-family: 'Neulis', Medium;
-  width: 90%;
-}
-
-.underline {
-  text-decoration: underline;
-  color: inherit; /* giữ màu giống dòng text chung */
-}
-
 .underline:hover {
   color: #000000;
 }
@@ -240,7 +217,7 @@ width: 9.5vw;
   position: absolute;
   top: 4vh;
   left: 2vw;
-  width: 25px;
+  width: 1.5vw;
   cursor: pointer;
   transition: filter 0.2s;
 }
