@@ -72,6 +72,8 @@ import filterNormal from './assets/normal.png';
 import filterCold from './assets/cold.png';
 import filterWarm from './assets/warm.png';
 
+import { useCallback } from 'react'; // nhớ import thêm cái này trên đầu file
+
 function CapturePage() {
   const [hoveredButton, setHoveredButton] = useState(null);
   const [isDownloadHovered, setIsDownloadHovered] = useState(false);
@@ -126,34 +128,37 @@ function CapturePage() {
   }
 }, [isAuto, previewStep, delay]); // ➕ thêm delay
 
-const capturePhoto = () => {
-    if (!webcamRef.current || previewStep >= 4) return;
 
-      shutterAudio.current.currentTime = 0;
-shutterAudio.current.play();
 
-    const screenshot = webcamRef.current.getScreenshot();
+const capturePhoto = useCallback(() => {
+  if (!webcamRef.current || previewStep >= 4) return;
 
-    if (screenshot) {
-      const newPhotos = [...photos];
-      newPhotos[previewStep] = screenshot;
-      setPhotos(newPhotos);
-      setPreviewStep(previewStep + 1);
-    }
-  };
+  shutterAudio.current.currentTime = 0;
+  shutterAudio.current.play();
+
+  const screenshot = webcamRef.current.getScreenshot();
+
+  if (screenshot) {
+    const newPhotos = [...photos];
+    newPhotos[previewStep] = screenshot;
+    setPhotos(newPhotos);
+    setPreviewStep(previewStep + 1);
+  }
+}, [photos, previewStep]); // thêm vào dependencies ở đây
+
   
   useEffect(() => {
   if (countdown === null || countdown <= 0) return;
   const timer = setTimeout(() => {
     if (countdown === 1) {
-      capturePhoto();
+      capturePhoto(); // đã được bọc useCallback nên eslint sẽ không la nữa
       setCountdown(null);
     } else {
       setCountdown(countdown - 1);
     }
   }, 1000);
   return () => clearTimeout(timer);
-}, [countdown, capturePhoto]); // ➕ thêm capturePhoto
+}, [countdown, capturePhoto]); // nhớ thêm capturePhoto vào dependency ở đây
 
 
 
