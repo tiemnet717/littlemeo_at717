@@ -4,6 +4,8 @@ import Homepage from './Homepage';
 import Framepage from './Framepage';
 import CapturePage from './CapturePage';
 
+import './CapturePage.css';
+
 function App() {
   return (
     <Routes>
