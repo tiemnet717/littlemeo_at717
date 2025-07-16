@@ -120,24 +120,26 @@ function CapturePage() {
     warm: 'brightness(1.05) saturate(1.1) contrast(1.02) hue-rotate(10deg)',
   };
 
-  useEffect(() => {
-    if (isAuto && previewStep < 4) {
-      setCountdown(delay);
-    }
-  }, [isAuto, previewStep]);
+ useEffect(() => {
+  if (isAuto && previewStep < 4) {
+    setCountdown(delay);
+  }
+}, [isAuto, previewStep, delay]); // ➕ thêm delay
+
 
   useEffect(() => {
-    if (countdown === null || countdown <= 0) return;
-    const timer = setTimeout(() => {
-      if (countdown === 1) {
-        capturePhoto();
-        setCountdown(null);
-      } else {
-        setCountdown(countdown - 1);
-      }
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, [countdown]);
+  if (countdown === null || countdown <= 0) return;
+  const timer = setTimeout(() => {
+    if (countdown === 1) {
+      capturePhoto();
+      setCountdown(null);
+    } else {
+      setCountdown(countdown - 1);
+    }
+  }, 1000);
+  return () => clearTimeout(timer);
+}, [countdown, capturePhoto]); // ➕ thêm capturePhoto
+
 
   const capturePhoto = () => {
     if (!webcamRef.current || previewStep >= 4) return;
@@ -169,17 +171,7 @@ shutterAudio.current.play();
     setCountdown(null);
   };
 
-  const applyFilterToImage = (image, filter) => {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
 
-    canvas.width = image.width;
-    canvas.height = image.height;
-
-    ctx.filter = filterStyles[filter] || 'none';
-    ctx.drawImage(image, 0, 0);
-    return canvas;
-  };
 
   const downloadFinalImage = async () => {
   const canvas = document.createElement('canvas');
