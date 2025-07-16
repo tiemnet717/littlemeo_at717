@@ -126,22 +126,7 @@ function CapturePage() {
   }
 }, [isAuto, previewStep, delay]); // ➕ thêm delay
 
-
-  useEffect(() => {
-  if (countdown === null || countdown <= 0) return;
-  const timer = setTimeout(() => {
-    if (countdown === 1) {
-      capturePhoto();
-      setCountdown(null);
-    } else {
-      setCountdown(countdown - 1);
-    }
-  }, 1000);
-  return () => clearTimeout(timer);
-}, [countdown, capturePhoto]); // ➕ thêm capturePhoto
-
-
-  const capturePhoto = () => {
+const capturePhoto = () => {
     if (!webcamRef.current || previewStep >= 4) return;
 
       shutterAudio.current.currentTime = 0;
@@ -156,6 +141,22 @@ shutterAudio.current.play();
       setPreviewStep(previewStep + 1);
     }
   };
+  
+  useEffect(() => {
+  if (countdown === null || countdown <= 0) return;
+  const timer = setTimeout(() => {
+    if (countdown === 1) {
+      capturePhoto();
+      setCountdown(null);
+    } else {
+      setCountdown(countdown - 1);
+    }
+  }, 1000);
+  return () => clearTimeout(timer);
+}, [countdown, capturePhoto]); // ➕ thêm capturePhoto
+
+
+
 
   const deletePhoto = (index) => {
     const newPhotos = [...photos];
